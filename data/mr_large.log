@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 771, in _sort_lines_in_memory
+    output.write(line)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/mr_matvec.py", line 30, in <module>
+    MatVecProduct.run()
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/job.py", line 616, in run
+    cls().execute()
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/job.py", line 687, in execute
+    self.run_job()
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/job.py", line 636, in run_job
+    runner.run()
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/runner.py", line 503, in run
+    self._run()
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 161, in _run
+    self._run_step(step, step_num)
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 170, in _run_step
+    self._run_streaming_step(step, step_num)
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 184, in _run_streaming_step
+    self._sort_reducer_input(step_num, len(map_splits))
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 672, in _sort_reducer_input
+    self._sort_input_func()(input_paths, output_path)
+  File "/home/ubuntu/dsan6000-hw03-parallel-processing/.venv/lib/python3.11/site-packages/mrjob/sim.py", line 769, in _sort_lines_in_memory
+    with open(output_path, 'wb') as output:
+OSError: [Errno 122] Disk quota exceeded
